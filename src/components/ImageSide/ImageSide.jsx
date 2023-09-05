@@ -1,5 +1,5 @@
 import * as C from "./ImageSide.styles";
-import Illustration from "../../../public/images/illustration-sign-up-desktop.svg";
+import Illustration from "../../assets/illustration-sign-up-desktop.svg";
 
 const ImageSide = () => {
     return (

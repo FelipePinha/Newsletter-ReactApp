@@ -8,4 +8,9 @@ export const Center = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 768px) {
+        padding: 0;
+        max-width: 100%;
+    }
 `;

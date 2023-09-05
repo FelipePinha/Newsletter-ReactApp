@@ -1,5 +1,5 @@
 import * as C from "./About.styles";
-import IconList from "../../../../public/images/icon-list.svg";
+import IconList from "../../../assets/icon-list.svg";
 
 const About = () => {
     return (

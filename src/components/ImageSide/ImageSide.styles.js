@@ -6,4 +6,12 @@ export const ImageWrapper = styled.div`
     img {
         max-width: 100%;
     }
+
+    @media (max-width: 768px) {
+        width: 100%;
+
+        img {
+            width: 100%;
+        }
+    }
 `;

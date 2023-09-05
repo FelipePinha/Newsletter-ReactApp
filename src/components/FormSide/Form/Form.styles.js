@@ -17,6 +17,10 @@ export const Input = styled.input`
     box-shadow: 0 0 0 1px #00000055;
     color: #36384e;
     font-weight: 600;
+
+    @media (max-width: 768px) {
+        width: 100%;
+    }
 `;
 
 export const SubmitButton = styled.button`
@@ -31,5 +35,9 @@ export const SubmitButton = styled.button`
 
     &:hover {
         background-image: linear-gradient(45deg, #fa3757 25%, #ff6257 75%);
+    }
+
+    @media (max-width: 768px) {
+        width: 100%;
     }
 `;
