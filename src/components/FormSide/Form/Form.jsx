@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import * as C from "./Form.styles";
 
 const Form = () => {
@@ -13,13 +14,28 @@ const Form = () => {
             return;
         }
 
+        const templateParams = {
+            email: email,
+        };
+
+        emailjs
+            .send("service_ivkegqb", "template_4ib836y", templateParams, "jTR4cvQgc3EThWdIN")
+            .then(
+                response => {
+                    console.log("email enviado", response.status, response.text);
+                },
+                err => {
+                    console.log("erro: " + err);
+                }
+            );
+
         setEmail("");
     };
 
     const handleChangeEmail = e => {
-        setEmail(e.target.value)
-        setError(false)
-    }
+        setEmail(e.target.value);
+        setError(false);
+    };
 
     return (
         <C.Form onSubmit={HandleSubmit}>
@@ -28,7 +44,7 @@ const Form = () => {
                 {error ? <p>Valid email required</p> : ""}
             </C.FormControl>
             <C.Input
-                isError={error}
+                $isError={error}
                 onChange={handleChangeEmail}
                 value={email}
                 type="text"

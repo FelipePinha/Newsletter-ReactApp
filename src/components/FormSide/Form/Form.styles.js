@@ -36,7 +36,7 @@ export const Input = styled.input`
     box-shadow: 0 0 0 1px #00000055;
     color: #36384e;
     font-weight: 600;
-    background-color: ${props => (props.isError ? "	#ff625755" : "#fff")};
+    background-color: ${props => (props.$isError ? "	#ff625755" : "#fff")};
 `;
 
 export const SubmitButton = styled.button`
