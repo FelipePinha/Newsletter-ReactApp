@@ -2,8 +2,7 @@ import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import * as C from "./Form.styles";
 
-const Form = () => {
-    const [email, setEmail] = useState("");
+const Form = ({ setModalIsOpen, email, setEmail }) => {
     const [error, setError] = useState(false);
 
     const HandleSubmit = e => {
@@ -23,13 +22,12 @@ const Form = () => {
             .then(
                 response => {
                     console.log("email enviado", response.status, response.text);
+                    setModalIsOpen(true);
                 },
                 err => {
                     console.log("erro: " + err);
                 }
             );
-
-        setEmail("");
     };
 
     const handleChangeEmail = e => {
@@ -41,7 +39,7 @@ const Form = () => {
         <C.Form onSubmit={HandleSubmit}>
             <C.FormControl>
                 <C.Label htmlFor="email">Email Address</C.Label>
-                {error ? <p>Valid email required</p> : ""}
+                {error ? <p>Valid email required</p> : null}
             </C.FormControl>
             <C.Input
                 $isError={error}
