@@ -18,7 +18,12 @@ const Form = ({ setModalIsOpen, email, setEmail }) => {
         };
 
         emailjs
-            .send("service_ivkegqb", "template_4ib836y", templateParams, "jTR4cvQgc3EThWdIN")
+            .send(
+                import.meta.env.VITE_SERVICE_ID,
+                import.meta.env.VITE_TEMPLATE_ID,
+                templateParams,
+                import.meta.env.VITE_PUBLIC_KEY
+            )
             .then(
                 response => {
                     console.log("email enviado", response.status, response.text);
