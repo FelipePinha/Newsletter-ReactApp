@@ -26,7 +26,6 @@ const Form = ({ setModalIsOpen, email, setEmail }) => {
             )
             .then(
                 response => {
-                    console.log("email enviado", response.status, response.text);
                     setModalIsOpen(true);
                 },
                 err => {
